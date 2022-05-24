@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             x:Class="GiftSelector.App">
+    <Application.Resources>
+        <ControlTemplate x:Key="DefaultTemplate">
+            <Grid >
+                <!-- page content -->
+                <ContentPresenter />
+                <!-- overlay -->
+                <BoxView BackgroundColor="Black"
+                Opacity="0.8"
+                IsVisible="{TemplateBinding BindingContext.IsBusy}"/>
+                <!-- busy indicator with text -->
+                <!--<Frame HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{TemplateBinding BindingContext.IsBusy}">-->
+                <!--<StackLayout >-->
+                <ActivityIndicator Scale="1.3"  IsVisible="{TemplateBinding BindingContext.IsBusy}" HorizontalOptions="Center" VerticalOptions="Center" IsRunning="{TemplateBinding BindingContext.IsBusy}" Color="#D8315B"/>
+                <!--<Label Text="{TemplateBinding BindingContext.BusyText}" />-->
+                <!--</StackLayout>-->
+                <!--</Frame>-->
+            </Grid>
+        </ControlTemplate>
+    </Application.Resources>
+</prism:PrismApplication>
